@@ -68,9 +68,9 @@ document.querySelector(".user-name").addEventListener("click", ()=>{
     })      
 })
 
-document.querySelectorAll(".btn-danger").forEach(deleteBtn =>{
-    let usersList = JSON.parse(localStorage.getItem("users"))
-    let userId = deleteBtn.getAttribute("Userid")
-    let foundUser = usersList.find(userTemp => userTemp.id === userId)
-    
-})
+// document.querySelectorAll(".btn-danger").forEach(deleteBtn =>{
+//     let usersList = JSON.parse(localStorage.getItem("users"))
+//     let userId = deleteBtn.getAttribute("Userid")
+//     let foundUser = usersList.find(userTemp => userTemp.id === userId)
+
+// })
