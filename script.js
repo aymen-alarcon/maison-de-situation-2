@@ -12,9 +12,20 @@ if (counterSpan.textContent === 0) {
 function displayUsersInTable() {
     let usersList = JSON.parse(localStorage.getItem("users"))
     usersList.forEach(user => {
-        document.querySelector(".user-name").textContent = `${user.name}`
-        document.querySelector(".email").textContent = `${user.email}`
-        document.querySelector(".age").textContent = `${user.name}`
+        document.getElementById("userTableBody").innerHTML += `
+            <tr>
+                <td>
+                    <span class="user-name" data-bs-toggle="modal" data-bs-target="#userDetailModal">
+                        ${user.name}
+                    </span>
+                </td>
+                <td>${user.email}</td>
+                <td>${user.age}</td>
+                <td>
+                    <button class="btn btn-sm btn-danger w-100">Supprimer</button>
+                </td>
+            </tr>
+        `
     });
 }
 
@@ -38,10 +49,9 @@ document.forms["userForm"].addEventListener("submit", (event)=>{
     //     if (user.id === userInfo.id) {            
     //         users.push(userInfo)
     //     }else{
-        //         let foundUser = user.find(userTemp => userTemp.id === userInfo.id)
-        
-        //     }
-        // })
+    //         let foundUser = user.find(userTemp => userTemp.id === userInfo.id)
+    //     }
+    // })
         
     users.push(userInfo)
     localStorage.setItem("users", JSON.stringify(users))
