@@ -38,11 +38,12 @@ document.forms["userForm"].addEventListener("submit", (event)=>{
     //     if (user.id === userInfo.id) {            
     //         users.push(userInfo)
     //     }else{
-    //         let foundUser = user.find(userTemp => userTemp.id === userInfo.id)
-
-    //     }
-    // })
-
+        //         let foundUser = user.find(userTemp => userTemp.id === userInfo.id)
+        
+        //     }
+        // })
+        
+    users.push(userInfo)
     localStorage.setItem("users", JSON.stringify(users))
     displayUsersInTable()
 })
