@@ -22,7 +22,7 @@ function displayUsersInTable() {
                 <td>${user.email}</td>
                 <td>${user.age}</td>
                 <td>
-                    <button class="btn btn-sm btn-danger w-100">Supprimer</button>
+                    <button class="btn btn-sm btn-danger w-100" Userid="${user.id}">Supprimer</button>
                 </td>
             </tr>
         `
@@ -58,8 +58,6 @@ document.forms["userForm"].addEventListener("submit", (event)=>{
     displayUsersInTable()
 })
 
-console.log(counterSpan.textContent)
-
 document.querySelector(".user-name").addEventListener("click", ()=>{
     let form = document.forms["userForm"]
     let usersList = JSON.parse(localStorage.getItem("users"))
@@ -67,6 +65,12 @@ document.querySelector(".user-name").addEventListener("click", ()=>{
         form.userName.value = `${user.name}`
         form.userEmail.value = `${user.email}`
         form.userAge.value = `${user.age}`
-    })
-        
+    })      
+})
+
+document.querySelectorAll(".btn-danger").forEach(deleteBtn =>{
+    let usersList = JSON.parse(localStorage.getItem("users"))
+    let userId = deleteBtn.getAttribute("Userid")
+    let foundUser = usersList.find(userTemp => userTemp.id === userId)
+    
 })
