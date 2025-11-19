@@ -15,22 +15,22 @@
             <form id="userForm">
                 <div class="mb-3">
                     <label for="userName" class="form-label">Id</label>
-                    <input type="text" class="form-control" id="userName" placeholder="Entrez l'Id">
+                    <input type="text" class="form-control" id="userId" name="" placeholder="Entrez l'Id" disabled>
                 </div>
 
                 <div class="mb-3">
                     <label for="userName" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="userName" placeholder="Entrez le nom" required>
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="Entrez le nom" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="userEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="userEmail" placeholder="Entrez l'email" required>
+                    <input type="email" class="form-control" id="userEmail" name="userEmail" placeholder="Entrez l'email" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="userAge" class="form-label">Âge</label>
-                    <input type="number" class="form-control" id="userAge" placeholder="Entrez l'âge" min="1" max="150" required>
+                    <input type="number" class="form-control" id="userAge" name="userAge" placeholder="Entrez l'âge" min="1" max="150" required>
                 </div>
 
                 <div class="d-flex gap-2 flex-column">
@@ -43,7 +43,7 @@
 
         <div class="users-section border p-5 m-5">
             <h5>Liste des utilisateurs</h5>
-            <p id="userCount" class="text-muted">Total : 0 utilisateur(s)</p>
+            <p id="userCount" class="text-muted">Total : <span class="counter">0</span> utilisateur(s)</p>
 
             <div id="emptyMessage" class="alert alert-info" role="alert">
                 Aucun utilisateur pour le moment. Ajoutez-en un via le formulaire ci-dessus.
@@ -62,12 +62,12 @@
                     <tbody id="userTableBody">
                         <tr>
                             <td>
-                                <span class="user-name" data-bs-toggle="modal" data-bs-target="#userDetailModal">
-                                    Tayeb SOUINI
+                                <span class="user-name">
+                                    
                                 </span>
                             </td>
-                            <td>TayebSOUINI.2@email.com</td>
-                            <td>30</td>
+                            <td class="email"></td>
+                            <td class="age"></td>
                             <td>
                                 <button class="btn btn-sm btn-danger w-100">Supprimer</button>
                             </td>
@@ -100,6 +100,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
     <script>
         
     </script>
